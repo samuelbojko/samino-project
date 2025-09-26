@@ -1,1 +1,20 @@
-<p>{{ welcomeMessage }}</p>
+
+<ul>
+  @for (quest of quests; track quest.id) {
+    <li>
+      <h1>{{ quest.title }}</h1>
+      <p>{{ quest.desc }}</p>
+      <span>Experience: {{ quest.exp }} XP</span>
+      
+      @if (quest.exp > 100) {
+        <p style="color: red; font-weight: bold;">MEGA XP!</p>
+      }
+      @else if (quest.exp > 50) {
+        <p style="color: green; font-weight: bold;">SUPER XP!</p>
+      }
+    </li>
+  }
+  @empty {
+    <li>No quests available.</li>
+  }
+</ul>
