@@ -1,3 +1,5 @@
+<button (click)="addQuest(newquests)">add quest</button>
+
 
 <ul>
   @for (quest of quests; track quest.id) {
@@ -12,6 +14,8 @@
       @else if (quest.exp > 50) {
         <p style="color: green; font-weight: bold;">SUPER XP!</p>
       }
+
+      <button (click)="removeQuest(quest.id)">Remove</button>
     </li>
   }
   @empty {

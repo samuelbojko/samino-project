@@ -47,8 +47,19 @@ quests: Newquests[] = [
     title: 'Escort the Caravan',
     desc: 'Protect the caravan traveling through the dangerous desert.',
     exp: 90
-  }
+  },
+  
+
 ];
+
+removeQuest(id: number) {
+    this.quests = this.quests.filter(q => q.id !== id);
+ }
+
+addQuest(newQuest: Newquests) {
+    this.quests.push({ ...newQuest });
+  }
 }
+
 
 
