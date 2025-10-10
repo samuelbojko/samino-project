@@ -1,8 +1,8 @@
-<button (click)="addQuest(quests)">add quest</button>
+<button (click)="addQuest()">add quest</button>
 
 
 <ul>
-  @for (quest of quests; track quest.id) {
+  @for (quest of quests(); track quest.id) {
     <li>
       <h1>{{ quest.title }}</h1>
       <p>{{ quest.desc }}</p>

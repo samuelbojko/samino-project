@@ -2,4 +2,7 @@
   <img src="assets\images\logo2.png" class="logo">
   <p class="header"> {{ header }}</p>
 </div>
-<app-quests></app-quests>
+<button (click)="ShowQuests()">Show Quests</button>
+  @if(showQuests) {
+  <app-quests></app-quests>
+}

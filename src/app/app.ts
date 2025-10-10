@@ -12,4 +12,16 @@ import { Questservice } from './questservice';
 })
 export class App {
   header = 'Quest Overflow'
+  showQuests = true
+
+  ShowQuests() {
+    if(this.showQuests) {
+      this.showQuests = false
+    }
+    else {
+      this.showQuests = true
+    }
+  }
+
+  
 }

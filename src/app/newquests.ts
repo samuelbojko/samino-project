@@ -1,5 +1,4 @@
 
-
 export interface Newquests {
   id: number;
   title: string;

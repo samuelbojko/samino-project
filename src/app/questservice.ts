@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Newquests } from './newquests';
 @Injectable({
   
   providedIn: 'root'
 })
 export class Questservice {
-  quests: Newquests[] = [
+
+  constructor() {
+    console.log('service created')
+  }
+  
+  quests = signal<Newquests[]>([
     {
       id: 1,
       title: 'The Lost Sword',
@@ -36,17 +41,18 @@ export class Questservice {
       desc: 'Protect the caravan traveling through the dangerous desert.',
       exp: 90
     }
-  ];
+  ]);
 
   getQuests() {
     return this.quests;
   }
 
   addQuest(newQuest: Newquests) {
-    this.quests.push({ ...newQuest });
+    // this.quests.push({ ...newQuest });
   }
 
   removeQuest(id: number) {
-    this.quests = this.quests.filter(q => q.id !== id);
+    const newArray = this.quests().filter(q => q.id !== id);
+    this.quests.set(newArray);
   }
 }
