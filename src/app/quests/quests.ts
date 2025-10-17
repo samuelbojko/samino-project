@@ -1,11 +1,12 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Newquests } from '../newquests';
 import { Questservice } from '../questservice';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-quests',
   standalone: true,
-  imports: [Quests],
+  imports: [Quests, RouterModule],
   providers: [Questservice],
   templateUrl: './quests.html',
   styleUrl: './quests.css'

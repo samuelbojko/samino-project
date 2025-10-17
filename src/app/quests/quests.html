@@ -1,4 +1,10 @@
+<a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
+
 <button (click)="addQuest()">add quest</button>
+<!-- <button (click)="ShowQuests()">Show Quests</button>
+  @if(showQuests) {
+  <app-quests></app-quests>
+} -->
 
 
 <ul>
@@ -16,6 +22,8 @@
       }
 
       <button (click)="removeQuest(quest.id)">Remove</button>
+      <a [routerLink]="['/quests', quest.id]">{{ quest.title }}</a>
+
     </li>
   }
   @empty {
