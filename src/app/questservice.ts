@@ -48,11 +48,13 @@ export class Questservice {
   }
 
   addQuest(newQuest: Newquests) {
-    // this.quests.push({ ...newQuest });
+
   }
 
   removeQuest(id: number) {
-    const newArray = this.quests().filter(q => q.id !== id);
-    this.quests.set(newArray);
+    // const newArray = this.quests().filter(q => q.id !== id);
+    // this.quests.set(newArray);
+
+    this.quests.update(quests => quests.filter(q => q.id !== id));
   }
 }

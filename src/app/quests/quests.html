@@ -1,10 +1,9 @@
 <a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
 
 <button (click)="addQuest()">add quest</button>
-<!-- <button (click)="ShowQuests()">Show Quests</button>
-  @if(showQuests) {
-  <app-quests></app-quests>
-} -->
+
+
+<p>Quest count: {{ quests().length }}</p>
 
 
 <ul>

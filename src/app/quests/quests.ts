@@ -21,7 +21,7 @@ export class Quests implements OnInit, OnDestroy {
 
   removeQuest(id: number) {
     this.questsService.removeQuest(id);
-    // this.quests = this.questsService.getQuests();
+    this.quests = this.questsService.getQuests();
   }
 
   addQuest() {
@@ -36,6 +36,7 @@ export class Quests implements OnInit, OnDestroy {
     // this.quests.push(newQuest)
     // this.questsService.addQuest(newQuest);
     // this.quests = this.questsService.getQuests();
+    this.quests.update(quests => [...quests, newQuest]);
   }
 
 ngOnDestroy(): void {
